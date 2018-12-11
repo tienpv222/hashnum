@@ -1,7 +1,8 @@
 .*/
-node_modules/
 dist/
 docs/
 docs-src/
+node_modules/
 tests/
 .eslintrc.yml
+.gitignore

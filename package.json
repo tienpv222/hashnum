@@ -1,16 +1,26 @@
 {
   "name": "hashnum",
   "version": "1.0.0",
-  "description": "A small library to shorten array of unsigned numbers to a string of characters.",
+  "description": "A small library to shorten array of positive numbers or zero into a string of characters.",
+  "keywords": [
+    "decode",
+    "encode",
+    "hash",
+    "number"
+  ],
+  "homepage": "https://github.com/pynnl/hashnum",
+  "repository": "github:pynnl/hashnum",
+  "license": "MIT",
+  "author": "pynnl",
   "main": "lib/index.js",
-  "types": "lib/index.d.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "dev:lib": "parcel serve .dev/index.html",
     "test": "jest tests"
   },
-  "keywords": [],
-  "author": "pynnl",
-  "license": "MIT",
+  "dependencies": {
+    "jsbi": "^2.0.5"
+  },
   "devDependencies": {
     "eslint": "^5.10.0",
     "eslint-config-standard": "^12.0.0",
@@ -19,10 +29,6 @@
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
     "jest": "^23.6.0",
-    "nodemon": "^1.18.7",
     "parcel-bundler": "^1.10.3"
-  },
-  "dependencies": {
-    "jsbi": "^2.0.5"
   }
 }
