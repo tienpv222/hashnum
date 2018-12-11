@@ -46,32 +46,61 @@ describe('Decoding returns empty array on invalid input:', () => {
   })
 })
 
-describe('Encoding and decoding are matched on:', () => {
-  it('Array of number', () => {
+describe('Encoding and decoding are matched on array:', () => {
+  it('Of number', () => {
     const data = [1, 23, 456, 7890]
     const str = Hashnum.maxEncode(data)
     const nums = Hashnum.decode(str)
     expect(nums).toEqual(data)
   })
 
-  it('Array with 0s in the front', () => {
-    const data = [0, 0, 0, 1]
-    const str = Hashnum.maxEncode(data)
-    const nums = Hashnum.decode(str)
-    expect(nums).toEqual(data)
-  })
-
-  it('Array of valid string', () => {
+  it('Of valid string', () => {
     const data = ['1', '23', '456', '7890']
     const str = Hashnum.maxEncode(data)
     const nums = Hashnum.decode(str)
     expect(nums).toEqual(data.map(e => Number(e)))
   })
 
-  it('Array of mix string and number', () => {
+  it('Of mix string and number', () => {
     const data = ['0', 0, '0', 1]
     const str = Hashnum.maxEncode(data)
     const nums = Hashnum.decode(str)
     expect(nums).toEqual(data.map(e => Number(e)))
+  })
+
+  it('Start with 0', () => {
+    const data = [0, 0, 0, 1]
+    const str = Hashnum.maxEncode(data)
+    const nums = Hashnum.decode(str)
+    expect(nums).toEqual(data)
+  })
+})
+
+describe('Encoding pattern', () => {
+  it('Normal', () => {
+    const str = Hashnum.maxEncode([1, 2, 3])
+    const occur = (str.match(/e/g) || []).length
+    expect(occur).toEqual(0)
+  })
+
+  it('Start with 0', () => {
+    const str = Hashnum.maxEncode([0, 1, 2, 3])
+    const occur = (str.match(/e/g) || []).length
+    expect(str[0]).toEqual('e')
+    expect(occur).toEqual(1)
+  })
+
+  it('Max number >= table len', () => {
+    const str = Hashnum.maxEncode([1, 2, 99])
+    const occur = (str.match(/e/g) || []).length
+    expect(str[0]).not.toEqual('e')
+    expect(occur).toEqual(1)
+  })
+
+  it('Start with 0 & Max number >= table len', () => {
+    const str = Hashnum.maxEncode([0, 1, 2, 99])
+    const occur = (str.match(/e/g) || []).length
+    expect(str[0]).toEqual('e')
+    expect(occur).toEqual(2)
   })
 })
