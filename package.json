@@ -1,18 +1,15 @@
 {
   "name": "hashnum",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A small library to shorten array of unsigned numbers to a string of characters.",
+  "main": "lib/index.js",
+  "types": "lib/index.d.js",
   "scripts": {
-    "build:lib": "parcel build src/index.js --global hashnum",
-    "start": "parcel serve test.html",
-    "dev:lib:node": "nodemon src/index.js",
-    "dev:lib": "parcel serve src/lib/dev.html",
-    "test:lib": "jest src/lib/"
+    "test": "jest tests"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "pynnl",
+  "license": "MIT",
   "devDependencies": {
     "eslint": "^5.10.0",
     "eslint-config-standard": "^12.0.0",
