@@ -66,7 +66,7 @@ the default table will be used.
 
 ```javascript
 const hashnum = new Hashnum({ table: '!@#$%' })
-hashnum.table = Hashnum.table // [0-9][a-z][A-Z]
+hashnum.table == Hashnum.table // true - [0-9][a-z][A-Z]
 ```
 
 `strOutput` - the flag to output decoded number as string. It is overrided
