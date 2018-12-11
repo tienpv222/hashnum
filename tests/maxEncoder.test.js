@@ -1,6 +1,6 @@
 const Hashnum = require('../lib')
 
-describe('Encoding returns empty string on invalid input:', () => {
+describe('Encode returns empty string on invalid input:', () => {
   it('Null', () => {
     expect(Hashnum.maxEncode(null)).toEqual('')
     expect(Hashnum.maxEncode()).toEqual('')
@@ -23,7 +23,7 @@ describe('Encoding returns empty string on invalid input:', () => {
   })
 })
 
-describe('Decoding returns empty array on invalid input:', () => {
+describe('Decode returns empty array on invalid input:', () => {
   it('Null', () => {
     expect(Hashnum.decode(null)).toEqual([])
     expect(Hashnum.decode()).toEqual([])
