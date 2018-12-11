@@ -1,0 +1,30 @@
+{
+  "name": "hashnum",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:lib": "parcel build src/index.js --global hashnum",
+    "start": "parcel serve test.html",
+    "dev:lib:node": "nodemon src/index.js",
+    "dev:lib": "parcel serve src/lib/dev.html",
+    "test:lib": "jest src/lib/"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^5.10.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "jest": "^23.6.0",
+    "nodemon": "^1.18.7",
+    "parcel-bundler": "^1.10.3"
+  },
+  "dependencies": {
+    "jsbi": "^2.0.5"
+  }
+}
