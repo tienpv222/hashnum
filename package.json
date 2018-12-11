@@ -5,6 +5,7 @@
   "main": "lib/index.js",
   "types": "lib/index.d.js",
   "scripts": {
+    "dev:lib": "parcel serve .dev/index.html",
     "test": "jest tests"
   },
   "keywords": [],

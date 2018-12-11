@@ -1,4 +1,4 @@
-const Hashnum = require('../src/lib')
+const Hashnum = require('../lib')
 
 describe('Encoding returns empty string on invalid input:', () => {
   it('Null', () => {
