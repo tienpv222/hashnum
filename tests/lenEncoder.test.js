@@ -40,6 +40,10 @@ describe('Decoding returns empty array on invalid input:', () => {
   it('Negative number in array', () => {
     expect(Hashnum.decode([])).toEqual([])
   })
+
+  it('String contains char not from table', () => {
+    expect(Hashnum.decode('abc*e')).toEqual([])
+  })
 })
 
 describe('Encoding and decoding are matched on:', () => {
