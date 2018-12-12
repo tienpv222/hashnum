@@ -38,9 +38,14 @@ Hashnum.decode()             // []
 ```
 
 `decode` can take a second `boolean` argument to output number as string.
+This is very useful for big numbers, where native type cannot handle.
 
 ```javascript
 Hashnum.decode('1meSQKbq1', true) // ['12', '3', '45', '6', '78', '9']
+
+const str = Hashnum.encode(['98765432100123456789']) // 'ddi3jfQBbX1TNFq'
+Hashnum.decode(str)        // [98765432100123460000]
+Hashnum.decode(str, true)  // ['98765432100123456789']
 ```
 
 ## Custom table
@@ -76,12 +81,4 @@ if explicitly being set on calling decoding.
 const hashnum = new Hashnum({ strOutput: true })
 hashnum.decode('1meSQKbq1', false) // [12, 3, 45, 6, 78, 9]
 hashnum.decode('1meSQKbq1')        // ['12', '3', '45', '6', '78', '9']
-```
-
-String type is useful for big numbers, where native number type cannot handle.
-
-```javascript
-const str = Hashnum.encode(['98765432100123456789']) // 'ddi3jfQBbX1TNFq'
-Hashnum.decode(str)        // [98765432100123460000]
-Hashnum.decode(str, true)  // ['98765432100123456789']
 ```
