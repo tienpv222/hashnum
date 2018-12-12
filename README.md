@@ -77,3 +77,11 @@ const hashnum = new Hashnum({ strOutput: true })
 hashnum.decode('1meSQKbq1', false) // [12, 3, 45, 6, 78, 9]
 hashnum.decode('1meSQKbq1')        // ['12', '3', '45', '6', '78', '9']
 ```
+
+String type is useful for big numbers, where native number type cannot handle.
+
+```javascript
+const str = Hashnum.encode(['98765432100123456789']) // 'ddi3jfQBbX1TNFq'
+Hashnum.decode(str)        // [98765432100123460000]
+Hashnum.decode(str, true)  // ['98765432100123456789']
+```
