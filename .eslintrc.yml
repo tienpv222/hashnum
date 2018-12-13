@@ -1,6 +1,9 @@
-extends: standard
+extends:
+  - standard
+  - plugin:vue/recommended
 rules:
   arrow-parens: [2, as-needed]
+  brace-style: 0
   comma-dangle: [2, always-multiline]
   curly: 0
   eol-last: [2, always]
