@@ -10,6 +10,5 @@ rules:
   no-unused-expressions: 0
   no-unused-vars: [2, {var: all, args: none}]
   operator-linebreak: [2, before]
-  prefer-const: 2
   space-before-function-paren: [2, 'never']
   vue/require-prop-types: 0
