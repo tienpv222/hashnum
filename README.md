@@ -84,3 +84,12 @@ const hashnum = new Hashnum({ strOutput: true })
 hashnum.decode('1meSQKbq1', false) // [12, 3, 45, 6, 78, 9]
 hashnum.decode('1meSQKbq1')        // ['12', '3', '45', '6', '78', '9']
 ```
+
+## Dependencies
+
+This library uses following third party libraries:
+- JSBI - [Apache-2.0](https://github.com/GoogleChromeLabs/jsbi/blob/master/LICENSE).
+
+## License
+
+This library is under [MIT license](https://github.com/pynnl/hashnum/blob/master/LICENSE).
