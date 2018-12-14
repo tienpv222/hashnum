@@ -3,6 +3,7 @@
   "version": "1.0.2",
   "description": "A small library to shorten array of positive numbers or zero into a string of characters.",
   "keywords": [
+    "shorten",
     "decode",
     "encode",
     "hash",
@@ -12,9 +13,13 @@
   "repository": "github:pynnl/hashnum",
   "license": "MIT",
   "author": "pynnl",
+  "files": [
+    "umd/"
+  ],
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
+    "build:lib": "parcel build lib/index.js --out-dir umd --out-file hashnum.js --global Hashnum",
     "dev:lib": "parcel serve .dev/index.html",
     "test": "jest tests"
   },
