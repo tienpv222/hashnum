@@ -1,19 +1,25 @@
 <template lang="pug">
-textarea(:value='str').input
+textarea.input(
+  :value='str'
+  @input='onInput')
 </template>
 
 <script>
+import Hashnum from '../../lib'
+
 export default {
   props: ['bus'],
   data: vm => ({
     str: '',
   }),
-  mounted(vm = this) {
-    vm.bus.$on('encode', vm.onEncode)
+  mounted() {
+    this.bus.$on('encode', this.onEncode)
   },
   methods: {
-    onEncode(str, vm = this) {
-      vm.str = str
+    onEncode(str) { this.str = str },
+    onInput(ev) {
+      this.str = ev.target.value
+      this.bus.$emit('decode', Hashnum.decode(ev.target.value))
     },
   },
 }

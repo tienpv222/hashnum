@@ -1,17 +1,25 @@
 <template lang="pug">
 #app(spellcheck='false')
-  #header HASHNUM
+  #header
+    span HASHNUM
+    a(href='https://github.com/pynnl/hashnum' target='_blank')
+      img(:src='logo')
   #body
     Encoder(:bus='bus')
     Decoder(:bus='bus')
   #footer
-    div body
+    a(href='https://github.com/pynnl/hashnum/blob/master/LICENSE'
+      target='_blank') MIT
+    span &nbsp;@2018&nbsp;
+    a(href='https://github.com/pynnl'
+      target='_blank') pynnl
 </template>
 
 <script>
 import Vue from 'vue'
 import Encoder from './components/Encoder'
 import Decoder from './components/Decoder'
+import logo from './assets/github.png'
 
 export default {
   components: {
@@ -20,7 +28,16 @@ export default {
   },
   data: vm => ({
     bus: new Vue(),
+    logo,
   }),
+  mounted() {
+    let click = () => {
+      this.bus.$emit('stop-demo')
+      document.removeEventListener('click', click)
+    }
+
+    document.addEventListener('click', click)
+  },
 }
 </script>
 

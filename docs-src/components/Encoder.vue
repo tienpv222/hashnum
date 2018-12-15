@@ -1,38 +1,40 @@
 <template lang="pug">
-#encoder.input
+.input
   span.bracket [
-  span
-    template(v-for='(e,i) in nums')
-      Number(
-        :ref='"num" + i'
-        :nums='nums'
-        :i='i'
-        @nums-change='onNumsChange'
-        @focus-change='onFocusChange')
+  span.nums(
+    v-text='str'
+    @input='onInput'
+    contenteditable)
   span.bracket ]
 </template>
 
 <script>
 import Hashnum from '../../lib'
-import Number from './Number'
 
 export default {
   components: { Number },
   props: ['bus'],
   data: vm => ({
-    nums: ['123', '6789', '12'],
+    str: '',
+    demo: '1, 23, 4, 56, 7, 89, ',
   }),
-  mounted(vm = this) {
+  mounted() {
+    let ev = { target: {} }
+    let i = 0
+    let itv = setInterval(() => {
+      this.str += this.demo[i++ % this.demo.length]
+      ev.target.innerText = this.str
+      this.onInput(ev)
+    }, 500)
+    this.bus.$on('stop-demo', () => clearInterval(itv))
+    this.bus.$on('decode', this.onDecode)
   },
   methods: {
-    onNumsChange(start, end, val, vm = this) {
-      vm.nums.splice(start, end, val)
-      vm.bus.$emit('encode', Hashnum.encode(vm.nums))
+    onDecode(nums) { this.str = nums.join(', ') },
+    onInput(ev) {
+      let nums = ev.target.innerText.split(',').map(e => e.trim())
+      this.bus.$emit('encode', Hashnum.encode(nums))
     },
-    onFocusChange(i, caret, vm = this) {
-      vm.$nextTick(() => vm.$refs['num' + i][0].setFocus(caret))
-    },
-
   },
 }
 </script>
