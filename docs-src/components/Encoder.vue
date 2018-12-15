@@ -16,16 +16,28 @@ export default {
   props: ['bus'],
   data: vm => ({
     str: '',
-    demo: '1, 23, 4, 56, 7, 89, ',
   }),
   mounted() {
+    // setup and play demo
     let ev = { target: {} }
     let i = 0
+    let j = 0
     let itv = setInterval(() => {
-      this.str += this.demo[i++ % this.demo.length]
+      if (++i < -1) return
+      else if (++j > 100) {
+        this.str = ''
+        j = 0
+        i++
+      }
+      else if (!++i) this.str += ', '
+      else {
+        this.str += Math.floor(Math.random() * 10)
+        if (Math.random() > 0.5) i = -8
+      }
       ev.target.innerText = this.str
       this.onInput(ev)
-    }, 500)
+    }, 100)
+
     this.bus.$on('stop-demo', () => clearInterval(itv))
     this.bus.$on('decode', this.onDecode)
   },
