@@ -19,7 +19,7 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "build:docs": "parcel build docs-src/index.pug --out-dir docs --public-url hashnum",
+    "build:docs": "parcel build docs-src/index.pug --out-dir docs",
     "build:lib": "parcel build lib/index.js --out-dir umd --out-file hashnum.js --global Hashnum",
     "dev:docs": "parcel serve docs-src/index.pug",
     "dev:lib": "parcel serve .dev/index.html",
