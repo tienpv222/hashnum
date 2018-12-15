@@ -1,11 +1,15 @@
-extends: standard
+extends:
+  - standard
+  - plugin:vue/recommended
 rules:
   arrow-parens: [2, as-needed]
+  brace-style: 0
   comma-dangle: [2, always-multiline]
   curly: 0
   eol-last: [2, always]
   eqeqeq: 0
   no-return-assign: 0
+  no-mixed-operators: 0
   no-undef: 0
   no-unused-expressions: 0
   no-unused-vars: [2, {var: all, args: none}]

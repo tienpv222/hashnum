@@ -19,21 +19,30 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
+    "build:docs": "parcel build docs-src/index.pug --out-dir docs",
     "build:lib": "parcel build lib/index.js --out-dir umd --out-file hashnum.js --global Hashnum",
+    "dev:docs": "parcel serve docs-src/index.pug",
     "dev:lib": "parcel serve .dev/index.html",
     "test": "jest tests"
   },
   "dependencies": {
-    "jsbi": "^2.0.5"
+    "jsbi": "^2.0.5",
+    "vue": "^2.5.21",
+    "vue-hot-reload-api": "^2.3.1"
   },
   "devDependencies": {
+    "@vue/component-compiler-utils": "^2.3.1",
     "eslint": "^5.10.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-node": "^8.0.0",
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
+    "eslint-plugin-vue": "^5.0.0",
     "jest": "^23.6.0",
-    "parcel-bundler": "^1.10.3"
+    "parcel-bundler": "^1.10.3",
+    "pug": "^2.0.3",
+    "stylus": "^0.54.5",
+    "vue-template-compiler": "^2.5.21"
   }
 }
