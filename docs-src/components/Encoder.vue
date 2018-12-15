@@ -20,20 +20,18 @@ export default {
   mounted() {
     // setup and play demo
     let ev = { target: {} }
-    let i = 0
+    let i = 4
     let j = 0
     let itv = setInterval(() => {
       if (++i < -1) return
-      else if (++j > 50) {
+      else if (++j > 30) {
         this.str = ''
         j = 0
-        i++
       }
-      else if (!++i) this.str += ', '
-      else {
-        this.str += Math.floor(Math.random() * 10)
-        if (Math.random() > 0.5) i = -8
-      }
+      else if (!++i) return (this.str += ',')
+      else if (++i == 3) return (this.str += ' ')
+      if (Math.random() > 0.5) i = -8
+      this.str += Math.floor(Math.random() * 10)
       ev.target.innerText = this.str
       this.onInput(ev)
     }, 100)
