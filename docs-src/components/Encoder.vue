@@ -24,7 +24,7 @@ export default {
     let j = 0
     let itv = setInterval(() => {
       if (++i < -1) return
-      else if (++j > 100) {
+      else if (++j > 50) {
         this.str = ''
         j = 0
         i++
