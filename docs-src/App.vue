@@ -31,12 +31,12 @@ export default {
     logo,
   }),
   mounted() {
-    let click = () => {
+    let mousedown = () => {
       this.bus.$emit('stop-demo')
-      document.removeEventListener('click', click)
+      document.removeEventListener('mousedown', mousedown)
     }
 
-    document.addEventListener('click', click)
+    document.addEventListener('mousedown', mousedown)
   },
 }
 </script>
