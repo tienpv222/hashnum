@@ -24,8 +24,16 @@ describe('Created instance works', () => {
     hashnum.table = '!@#$%'
     expect(hashnum.decode(hashnum.maxEncode(nums))).toEqual(nums)
     expect(hashnum.decode(hashnum.lenEncode(nums))).toEqual(nums)
+  })
 
-    hashnum.table = ''
+  it('Custom table with duplicate', () => {
+    hashnum.table = '!@@#$%%'
+    expect(hashnum.decode(hashnum.maxEncode(nums))).toEqual(nums)
+    expect(hashnum.decode(hashnum.lenEncode(nums))).toEqual(nums)
+  })
+
+  it('Custom table with not enough unique char', () => {
+    hashnum.table = '!@'
     expect(hashnum.decode(hashnum.maxEncode(nums))).toEqual(nums)
     expect(hashnum.decode(hashnum.lenEncode(nums))).toEqual(nums)
   })
