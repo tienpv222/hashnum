@@ -14,15 +14,12 @@
   "license": "MIT",
   "author": "pynnl",
   "files": [
-    "lib/hashnum.d.ts",
-    "lib/hashnum.js",
-    "lib/hashnum.map"
+    "lib"
   ],
-  "main": "lib/hashnum.js",
-  "types": "lib/hashnum.d.ts",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "build:docs": "parcel build docs-src/index.pug --out-dir docs --public-url /hashnum/",
-    "build:lib": "parcel build lib/index.js --out-dir lib --out-file hashnum.js --global Hashnum",
     "dev:docs": "parcel serve docs-src/index.pug",
     "dev:lib": "parcel serve .dev/index.html",
     "test": "jest tests"
@@ -46,6 +43,5 @@
     "vue": "^2.5.21",
     "vue-hot-reload-api": "^2.3.1",
     "vue-template-compiler": "^2.5.21"
-  },
-  "unpkg": "lib/hashnum.js"
+  }
 }

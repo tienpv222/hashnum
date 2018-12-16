@@ -1,5 +1,4 @@
 .*/
 dist/
 node_modules/
-lib/hashnum.js
-lib/hashnum.map
+

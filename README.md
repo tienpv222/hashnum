@@ -16,12 +16,6 @@ npm i -S hashnum
 import Hashnum from 'hashnum'
 ```
 
-Or
-
-```html
-<script src="https://unpkg.com/hashnum"></script>
-```
-
 ## Usage
 
 ```javascript
