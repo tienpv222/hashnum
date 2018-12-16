@@ -6,3 +6,5 @@ node_modules/
 tests/
 .eslintrc.yml
 .gitignore
+.terserrc
+.travis.yml
