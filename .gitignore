@@ -1,4 +1,5 @@
 .*/
 dist/
 node_modules/
-umd/
+lib/hashnum.js
+lib/hashnum.map
