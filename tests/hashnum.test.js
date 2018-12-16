@@ -21,19 +21,19 @@ describe('Created instance works', () => {
   const nums = [1, 23, 4, 56, 7, 89]
 
   it('Custom table', () => {
-    hashnum.table = '!@#$%'
+    hashnum.table = '(@#$%'
     expect(hashnum.decode(hashnum.maxEncode(nums))).toEqual(nums)
     expect(hashnum.decode(hashnum.lenEncode(nums))).toEqual(nums)
   })
 
   it('Custom table with duplicate', () => {
-    hashnum.table = '!@@#$%%'
+    hashnum.table = '(@@#$%%'
     expect(hashnum.decode(hashnum.maxEncode(nums))).toEqual(nums)
     expect(hashnum.decode(hashnum.lenEncode(nums))).toEqual(nums)
   })
 
   it('Custom table with not enough unique char', () => {
-    hashnum.table = '!@'
+    hashnum.table = '(@'
     expect(hashnum.decode(hashnum.maxEncode(nums))).toEqual(nums)
     expect(hashnum.decode(hashnum.lenEncode(nums))).toEqual(nums)
   })
