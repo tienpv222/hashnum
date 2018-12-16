@@ -1,6 +1,7 @@
 # hashnum
 
 [![npm version](https://badge.fury.io/js/hashnum.svg)](https://badge.fury.io/js/hashnum)
+[![Build Status](https://travis-ci.org/pynnl/hashnum.svg?branch=master)](https://travis-ci.org/pynnl/hashnum)
 
 A small library to shorten array of positive numbers or zero into a string of characters.
 
