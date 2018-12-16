@@ -1,6 +1,6 @@
 {
   "name": "hashnum",
-  "version": "1.0.5",
+  "version": "1.0.6-0",
   "description": "A small library to shorten array of positive numbers or zero into a string of characters.",
   "keywords": [
     "decode",
