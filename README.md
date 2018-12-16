@@ -76,7 +76,7 @@ hashnum.encode([12, 3, 45, 6, 78, 9]) // '&^%@&)%%)((()(^&(*'
 hashnum.decode('&^%@&)%%)((()(^&(*')  // ['12', '3', '45', '6', '78', '9']
 ```
 
-`table` - the table of characters. Must contains at least **6** unique characters, or else
+`table` - the table of characters. Must contains at least **5** unique characters, or else
 the default table will be used.
 
 ```javascript
