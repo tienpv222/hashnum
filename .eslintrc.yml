@@ -1,18 +1,38 @@
+env:
+  browser: true
+  es6: true
+  node: true
+  jest: true
 extends:
-  - standard
-  - plugin:vue/recommended
+  - standard-with-typescript
+globals:
+  Atomics: readonly
+  SharedArrayBuffer: readonly
+parser: '@typescript-eslint/parser'
+parserOptions:
+  ecmaVersion: 2018
+  sourceType: module
+  project: tsconfig.json
+
+  # bugs
+  createDefaultProgram: true
+plugins:
+  - '@typescript-eslint'
 rules:
-  arrow-parens: [2, as-needed]
-  brace-style: 0
-  comma-dangle: [2, always-multiline]
-  curly: 0
-  eol-last: [2, always]
-  eqeqeq: 0
+  curly: [2, multi-or-nest, consistent]
   no-return-assign: 0
-  no-mixed-operators: 0
+  symbol-description: 0
+
+  '@typescript-eslint/indent': [2, 2, { 
+    flatTernaryExpressions: true,
+    ignoredNodes: ['TemplateLiteral > *.expressions']
+  }]
+  '@typescript-eslint/consistent-type-definitions': [2, type]
+  '@typescript-eslint/restrict-plus-operands': 0
+  '@typescript-eslint/consistent-type-assertions': 0
+  '@typescript-eslint/explicit-function-return-type': 0
+  '@typescript-eslint/strict-boolean-expressions': 0
+
+  # bugs
+  '@typescript-eslint/array-type': 0
   no-undef: 0
-  no-unused-expressions: 0
-  no-unused-vars: [2, {var: all, args: none}]
-  operator-linebreak: [2, before]
-  space-before-function-paren: [2, 'never']
-  vue/require-prop-types: 0
