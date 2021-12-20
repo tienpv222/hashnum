@@ -5,7 +5,7 @@
 
 A small library to shorten array of positive numbers or zero into a string of characters.
 
-Demo: https://pynnl.github.io/hashnum
+Demo: https://tienpv222.github.io/hashnum
 
 ## Install
 
